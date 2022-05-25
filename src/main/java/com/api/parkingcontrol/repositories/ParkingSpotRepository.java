@@ -10,5 +10,7 @@ import java.util.UUID;
 @Repository // JpaRepository já contém essa Anotation, não é necessário adiciona-lá na interface (mas deixa organizado colocar).
 public interface ParkingSpotRepository extends JpaRepository<ParkingSpotModel, UUID> {
 
-
+    boolean existsByLicensePlateCar(String licensePlateCar);
+    boolean existsByParkingSpotNumber(String parkingSpotNumber);
+    boolean existsByApartamentAndBlock(String apartament, String block);
 }
